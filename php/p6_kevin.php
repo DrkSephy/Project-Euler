@@ -13,8 +13,10 @@
  *  natural numbers and the square of the sum.
 */
 
-for($sumOfSq = 0, $i = 1; $i <= 100; $i++) $sumOfSq += pow($i, 2);
-for($sqOfSums = 0, $j = 1; $j <= 100; $j++) $sqOfSums += $j;
+for($sumOfSq = $sqOfSums = 0, $i = 1; $i <= 100; $i++) {
+    $sumOfSq += pow($i, 2);
+    $sqOfSums += $i;
+}
 echo pow($sqOfSums, 2) - $sumOfSq;
 
 ?>
