@@ -11,12 +11,7 @@
  *  exceed four million, find the sum of the even-valued terms.
  */
 
-// loop + swap + mod + accum
-$s = 0;
-for($i = 1, $j = 2; $i < 4000000; $t = $j, $j += $i, $i = $t)
-    if($i % 2 === 0)
-        $s += $i;
-
-echo $s; // 4613732
+for($s = 0, $i = 1, $j = 2; $i <= 4000000; $t = $j, $j += $i, $i = $t) $s += !($i % 2) ? $i : 0;
+echo $s;
 
 ?>
