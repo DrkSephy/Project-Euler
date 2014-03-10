@@ -18,14 +18,11 @@
 $names = str_getcsv(file_get_contents('names.txt'));
 sort($names);
 
-$alphaVal = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
-             'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-
 $total = 0;
 foreach($names as $index => $name) {
     $val = 0;
     foreach(str_split($name) as $l)
-        $val += array_keys($alphaVal, $l)[0] + 1;
+        $val += ord($l) - 64;
     $total += $val * ($index + 1);
 }
 
