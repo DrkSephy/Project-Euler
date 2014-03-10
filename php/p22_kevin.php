@@ -19,12 +19,9 @@ $names = str_getcsv(file_get_contents('names.txt'));
 sort($names);
 
 $total = 0;
-foreach($names as $index => $name) {
-    $val = 0;
+foreach($names as $index => $name)
     foreach(str_split($name) as $l)
-        $val += ord($l) - 64;
-    $total += $val * ($index + 1);
-}
+        $total += (ord($l) - 64) * ($index + 1);
 
 echo $total;
 
