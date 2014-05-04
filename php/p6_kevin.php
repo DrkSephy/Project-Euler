@@ -15,10 +15,13 @@
  *  natural numbers and the square of the sum.
  */
 
-for($sumOfSq = $sqOfSums = 0, $i = 1; $i <= 100; $i++) {
-    $sumOfSq += pow($i, 2);
-    $sqOfSums += $i;
+function array_sq($x) {
+    foreach($x as $k => $v)
+        $r[$k] = $v * $v;
+    return $r;
 }
-echo pow($sqOfSums, 2) - $sumOfSq;
+
+$n = range(0, 100);
+echo pow(array_sum($n), 2) - array_sum(array_sq($n));
 
 ?>
