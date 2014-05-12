@@ -8,9 +8,10 @@
  *  Find the sum of all the multiples of 3 or 5 below 1000.
  */
 
-$s = 0;
-for($i = 0; $i < 1000; $i += 3) $s += $i;
-for($i = 0; $i < 1000; $i += 5) $s += $i % 3 ? $i : 0;
-echo $s;
+
+// Definition of "multiple" + inclusion-exclusion principle + closed form summation (triangle numbers)
+
+$n = 999; // "below 1000" = 1 to 999
+echo (1.5 * (int)($n / 3) * ((int)($n / 3) + 1)) + (2.5 * (int)($n / 5) * ((int)($n / 5) + 1)) - (7.5 * (int)($n / 15) * ((int)($n / 15) + 1)); // O(1)
 
 ?>
